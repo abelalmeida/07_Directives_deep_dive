@@ -1,0 +1,38 @@
+<main>
+  <app-learning-resources />
+
+  <hr />
+
+  <app-auth />
+
+  <!-- @if (isAdmin()) {
+    <p> Only Admins can see this </p>
+  } @else if (isUser()) {
+    <p> Only Users can see this </p>
+  } @else if (isGuest()) {
+    <p> Only Guests can see this </p>
+  } @else {
+    <p> No one is logged in </p>
+  } -->
+<!-- 
+  old way of doing it -->
+
+    <!-- <p *ngIf="isAdmin()"> Only Admins can see this </p>
+   <p *ngIf="isUser()"> Only Users can see this </p>
+   <p *ngIf="isGuest()"> Only Guests can see this </p>
+
+    <p *ngIf="!isAdmin() && !isUser() && !isGuest()"> No one is logged in </p> -->
+
+    <!-- <ng-template appAuth="admin">
+      <p> Only Admins can see this  </p>
+
+    </ng-template> -->
+
+    <p *appAuth="'admin'"  appLog class="protected-content admin">Only admins should see this! new appAuth</p>
+    <!-- <p *appAuth="'user'"  class="protected-content unauthenticated">Only users should see this! new appAuth</p>
+    <p *appAuth="'guest'"  class="protected-content authenticated">Only guests should see this! new appAuth</p> -->
+    <!-- <p appAuth="admin"> Only Admins can see this </p> -->
+
+    <!-- <p appAuth="user"> Only Users can see this </p>
+    <p appAuth="guest"> Only Guests can see this </p> -->
+</main>
